@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Swashbuckle_InComm</id>
-    <version>$version$</version>
+    <version>6.0.0</version>
     <title>Swashbuckle.Core - Swashbuckle_InComm</title>
     <authors>IDS #$SWAG</authors>
     <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
