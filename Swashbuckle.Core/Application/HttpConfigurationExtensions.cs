@@ -5,6 +5,7 @@ using Newtonsoft.Json.Serialization;
 using Swashbuckle.Application;
 using System.Net.Http;
 using System.Collections.Generic;
+using System.Threading;
 using System.Web.Http.Routing;
 using Newtonsoft.Json;
 
@@ -27,14 +28,15 @@ namespace Swashbuckle.Application
             Action<SwaggerDocsConfig> configure = null)
         {
             var config = new SwaggerDocsConfig();
-            if (configure != null) configure(config);
+            configure?.Invoke(config);
+
 
             httpConfig.Routes.MapHttpRoute(
                 name: "swagger_docs" + routeTemplate,
                 routeTemplate: routeTemplate,
                 defaults: null,
                 constraints: new { apiVersion = @".+" },
-                handler: new SwaggerDocsHandler(config)
+                handler: new SwaggerDocsHandler(config, Thread.CurrentPrincipal.Identity.IsAuthenticated)
             );
 
             return new SwaggerEnabledConfiguration(

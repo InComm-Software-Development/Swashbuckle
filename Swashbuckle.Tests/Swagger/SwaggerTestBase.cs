@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Security.Principal;
+using System.Threading;
 using System.Web.Http;
+using System.Web.Security;
 using Newtonsoft.Json;
 using Swashbuckle.Application;
 using Swashbuckle.Swagger;
 using NUnit.Framework;
+
 
 namespace Swashbuckle.Tests.Swagger
 {
@@ -11,17 +15,16 @@ namespace Swashbuckle.Tests.Swagger
     {
         protected SwaggerTestBase(string routeTemplate)
             : base(routeTemplate)
-        {}
+        { }
 
         protected void SetUpHandler(Action<SwaggerDocsConfig> configure = null)
         {
             var swaggerDocsConfig = new SwaggerDocsConfig();
             swaggerDocsConfig.SingleApiVersion("v1", "Test API");
 
-            if (configure != null)
-                configure(swaggerDocsConfig);
+            configure?.Invoke(swaggerDocsConfig);
 
-            Handler = new SwaggerDocsHandler(swaggerDocsConfig);
+            Handler = new SwaggerDocsHandler(swaggerDocsConfig, true);
         }
     }
 }

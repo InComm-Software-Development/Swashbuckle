@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Web.Http;
 using System.Net.Http.Formatting;
 using Newtonsoft.Json;
@@ -13,15 +14,17 @@ namespace Swashbuckle.Application
     public class SwaggerDocsHandler : HttpMessageHandler
     {
         private readonly SwaggerDocsConfig _config;
+        private readonly bool _isAuthenticated;
 
-        public SwaggerDocsHandler(SwaggerDocsConfig config)
+        public SwaggerDocsHandler(SwaggerDocsConfig config, bool isAuthenticated)
         {
             _config = config;
+            _isAuthenticated = isAuthenticated;
         }
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            if (!Thread.CurrentPrincipal.Identity.IsAuthenticated)
+            if (!_isAuthenticated)
             {
                 var response = request.CreateResponse(HttpStatusCode.Unauthorized);
                 return Task.FromResult(response);
