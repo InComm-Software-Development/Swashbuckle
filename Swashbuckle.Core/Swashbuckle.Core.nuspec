@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Swashbuckle_InComm</id>
-    <version>6.0.0</version>
-    <title>Swashbuckle.Core - Swashbuckle_InComm</title>
+    <id>Incomm.Libraries.Swashbuckle.Core</id>
+    <version>6.0.1</version>
+    <title>IDS Swashbuckle.Core</title>
     <authors>IDS #$SWAG</authors>
     <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
     <projectUrl>https://github.com/InCommDigitalSolutions/Swashbuckle</projectUrl>
