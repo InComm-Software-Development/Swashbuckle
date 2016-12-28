@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
 using WebActivatorEx;
 using $rootnamespace$;
 using Swashbuckle.Application;
-using Swashbuckle.Swagger;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -16,8 +13,6 @@ namespace $rootnamespace$
     {
         public static void Register()
         {
-            var thisAssembly = typeof(SwaggerConfig).Assembly;
-
             GlobalConfiguration.Configuration 
                 .EnableSwagger(c =>
                     {
