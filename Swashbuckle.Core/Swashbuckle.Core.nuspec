@@ -18,4 +18,7 @@
       <dependency id="WebActivatorEx" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="Nuget\Content\App_Start\SwaggerConfig.cs.pp" target="Content\App_Start" />
+  </files>
 </package>

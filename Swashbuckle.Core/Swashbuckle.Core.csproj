@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Swashbuckle</RootNamespace>
-    <AssemblyName>Swashbuckle.Core</AssemblyName>
+    <AssemblyName>Incomm.Libraries.Swashbuckle.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -124,6 +124,7 @@
     <Content Include="Swashbuckle.Core.nuspec">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Nuget\Content\App_Start\SwaggerConfig.cs.pp" />
     <None Include="packages.config" />
     <None Include="Swashbuckle.Core.snk" />
   </ItemGroup>
