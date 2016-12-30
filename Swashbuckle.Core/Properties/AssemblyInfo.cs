@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -34,3 +35,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("6.0.3")]
 [assembly: AssemblyFileVersion("6.0.3")]
 [assembly: AssemblyInformationalVersion("6.0.3")]
+
+[assembly: InternalsVisibleTo("Swashbuckle.Tests")]

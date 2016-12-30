@@ -191,8 +191,6 @@ namespace Swashbuckle.Tests.SwaggerUi
             StringAssert.Contains("apiKeyIn: 'header'", content);
         }
 
-        [Ignore("Why is this integration test a thing?")]
-        [TestCase("http://tempuri.org/swagger/ui/images/logo_small-png",                   Result = "image/png")]
         [TestCase("http://tempuri.org/swagger/ui/css/typography-css",                      Result = "text/css")]
         public string It_returns_correct_asset_mime_type(string resourceUri)
         {

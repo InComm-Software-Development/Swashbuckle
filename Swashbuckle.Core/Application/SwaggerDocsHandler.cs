@@ -14,7 +14,7 @@ namespace Swashbuckle.Application
     public class SwaggerDocsHandler : HttpMessageHandler
     {
         private readonly SwaggerDocsConfig _config;
-        public Func<bool> IsAuthenticated;
+        internal Func<bool> IsAuthenticated;
 
         public SwaggerDocsHandler(SwaggerDocsConfig config)
         {
