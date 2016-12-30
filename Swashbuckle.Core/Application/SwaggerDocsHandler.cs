@@ -14,17 +14,22 @@ namespace Swashbuckle.Application
     public class SwaggerDocsHandler : HttpMessageHandler
     {
         private readonly SwaggerDocsConfig _config;
-        private readonly bool _isAuthenticated;
+        public Func<bool> IsAuthenticated;
 
-        public SwaggerDocsHandler(SwaggerDocsConfig config, bool isAuthenticated)
+        public SwaggerDocsHandler(SwaggerDocsConfig config)
         {
             _config = config;
-            _isAuthenticated = isAuthenticated;
+            IsAuthenticated = CheckThreadAuthentication;
+        }
+
+        private bool CheckThreadAuthentication()
+        {
+            return Thread.CurrentPrincipal.Identity.IsAuthenticated;
         }
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            if (!_isAuthenticated)
+            if (!IsAuthenticated())
             {
                 var response = request.CreateResponse(HttpStatusCode.Unauthorized);
                 return Task.FromResult(response);

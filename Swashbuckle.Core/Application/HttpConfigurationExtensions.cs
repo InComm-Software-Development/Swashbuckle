@@ -36,7 +36,7 @@ namespace Swashbuckle.Application
                 routeTemplate: routeTemplate,
                 defaults: null,
                 constraints: new { apiVersion = @".+" },
-                handler: new SwaggerDocsHandler(config, Thread.CurrentPrincipal.Identity.IsAuthenticated)
+                handler: new SwaggerDocsHandler(config)
             );
 
             return new SwaggerEnabledConfiguration(
