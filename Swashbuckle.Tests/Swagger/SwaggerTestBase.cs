@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Security.Principal;
-using System.Threading;
-using System.Web.Http;
-using System.Web.Security;
-using Newtonsoft.Json;
 using Swashbuckle.Application;
-using Swashbuckle.Swagger;
-using NUnit.Framework;
 
 
 namespace Swashbuckle.Tests.Swagger
@@ -24,7 +17,7 @@ namespace Swashbuckle.Tests.Swagger
 
             configure?.Invoke(swaggerDocsConfig);
 
-            Handler = new SwaggerDocsHandler(swaggerDocsConfig, true);
+            Handler = new SwaggerDocsHandler(swaggerDocsConfig) {IsAuthenticated = () => true};
         }
     }
 }
