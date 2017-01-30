@@ -13,6 +13,7 @@
     <copyright>Copyright 2017</copyright>
     <tags>Swagger SwaggerUi Documentation Discovery Help WebApi AspNet AspNetWebApi Docs SelfHost OWIN</tags>
     <dependencies>
+      <dependency id="Incomm.Libraries.Logging" version="2.1.0" />
       <dependency id="Microsoft.AspNet.WebApi.Core" version="4.0.20710" />
       <dependency id="Microsoft.AspNet.WebApi.WebHost" version="4.0.20710" />
       <dependency id="WebActivatorEx" />
