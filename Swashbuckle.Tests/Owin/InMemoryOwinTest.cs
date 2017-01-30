@@ -25,6 +25,7 @@ namespace Swashbuckle.Tests.Owin
         }
 
         [Test]
+        [Ignore("Not supporting swagger as Owin")]
         public async Task It_supports_configuring_single_swagger_endpoint()
         {
             // Given
@@ -40,6 +41,7 @@ namespace Swashbuckle.Tests.Owin
         }
 
         [Test]
+        [Ignore("Not supporting swagger as Owin")]
         public async Task It_supports_configuring_multiple_swagger_endpoints()
         {
             // Given

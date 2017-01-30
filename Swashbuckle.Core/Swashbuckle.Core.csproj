@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,8 +8,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Swashbuckle</RootNamespace>
-    <AssemblyName>Swashbuckle.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>Incomm.Libraries.Swashbuckle.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -36,13 +36,21 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Swashbuckle.Core.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Incomm.Libraries.Logging, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Incomm.Libraries.Logging.2.1.0\lib\net45\Incomm.Libraries.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -66,6 +74,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\LogAdapter.cs" />
     <Compile Include="Application\HttpRouteDirectionConstraint.cs" />
     <Compile Include="Swagger\Annotations\ApplySwaggerOperationAttributes.cs" />
     <Compile Include="Swagger\Annotations\ApplySwaggerSchemaFilterAttributes.cs" />
@@ -124,7 +133,11 @@
     <Content Include="Swashbuckle.Core.nuspec">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="packages.config" />
+    <None Include="log4net.config" />
+    <None Include="Nuget\Content\App_Start\SwaggerConfig.cs.pp" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Swashbuckle.Core.snk" />
   </ItemGroup>
   <!-- Automatically embed swagger-ui files. Construct name so resource can be retrieved by swagger-ui relative path -->

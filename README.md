@@ -1,3 +1,8 @@
+:heavy_exclamation_mark::heavy_exclamation_mark::heavy_exclamation_mark: This project is a fork from release 5.5.2 of Swashbuckle at https://github.com/domaindrivendev/Swashbuckle|
+--------------
+This is a modified version of Swashbuckle that allows to protect the specification endpoint from unauthorized access. This functionality has been dismissed by the original author of the package, hence the separate repository.|
+
+
 :heavy_exclamation_mark::heavy_exclamation_mark::heavy_exclamation_mark: The source code for Swashbuckle 6.0 currently resides at https://github.com/domaindrivendev/Ahoy|
 --------------
 This new version targets ASP.NET Core (RC2 and beyond) and, like the new .NET framework, was built from the ground up - hence the separate repository. It's currently in beta and once it reaches a stable release milestone, I plan to merge it back on top of this codebase. In the meantime, if you have issues related to 6.0.0, please create them at the other repo.|
