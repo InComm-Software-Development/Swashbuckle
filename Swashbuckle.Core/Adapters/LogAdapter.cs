@@ -9,8 +9,6 @@ namespace Swashbuckle.Adapters
     {
         private const string LogName = "Application";
         private const string ApplicationName = "Swashbuckle";
-        //private const string ApplicationName = "OrderApi";
-
         
         private static readonly EventLog EventLog;
 
